@@ -60,9 +60,27 @@
 			return $resultado;
 
 		}
-
-
-
+		public function update($assoc=array(),$id){
+			//$assoc=['nombre'=>'Dante','password'=>'Hola123.'];
+			$sql='UPDATE '.$this->table.' SET ';
+			$i=0;
+			foreach ($assoc as $llave => $valor) {
+				$sql.=$llave.'="'.$valor.'"';
+				if($i<count($assoc)-1)
+					$sql.=',';
+				$i++;
+			}
+			
+			$sql.=' WHERE id='.$id;
+			#echo $sql;
+			$resultado=$this->con->query($sql);
+			return $resultado;
+		}
+		public function destroy($ids=array()){
+			$sql='DELETE FROM '.$this->table.' WHERE id IN('.$this->array__find_convertion($ids,false).')';
+			$resultado=$this->con->query($sql);
+			return $resultado;
+		}
 	}
 
 

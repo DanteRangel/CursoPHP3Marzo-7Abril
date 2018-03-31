@@ -63,6 +63,28 @@
 				header('Location: ./?controller=User&method=index&error=No se ha podido eliminar al usuario');
 			}
 		}
+		public function update($request=0){
+			include APP_Model.'User.php';
+			$user=new User();
+			if(isset($request['id'])){
+				$id=$request['id'];
+				unset($request['id']);
+				$user->update($_POST,$id);
+				//return;
+				header('Location: ./?controller=User&method=index&success=Se ha actualizado el usuarios');				
+			}else{
+				header('Location: ./?controller=User&method=index&error=Usuario no definido');	
+			}
+
+
+		}
+		public function destroy($request=0){
+			include APP_Model.'User.php';
+			$ids=$_POST['id'];
+			$user=new User();
+			$user->destroy($ids);
+			return 1;
+		}
 
 	}
 
