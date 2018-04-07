@@ -65,7 +65,11 @@
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
 
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">    
+                <li style="margin-right: 5em;">
+                  <a href="./?controller=Login&method=logout" class="user-profile" >Cerrar Sesion</a>
+                </li>          
+                  
               </ul>
             </nav>
           </div>

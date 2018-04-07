@@ -5,5 +5,6 @@
 			public $table="User";
 			public $atributos=['id','nombre','password','correo','tipo'];
 			public $primaryKey="id";
+			
 		}
  ?>

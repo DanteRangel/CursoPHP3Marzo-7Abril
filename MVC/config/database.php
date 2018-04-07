@@ -2,8 +2,8 @@
 	return array(
 		'driver'=>'mysql',
 		'database'=>'CursoPHP',
-		'password'=>'Dante_311332065',
-		'user'=>'cursophp',
+		'password'=>'311332065',
+		'user'=>'root',
 		'host'=>'localhost'
 		);
  ?>s

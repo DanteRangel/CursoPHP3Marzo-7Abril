@@ -31,6 +31,34 @@
 			$resultado=$this->con->query($sql);
 			return $resultado->fetch_assoc();
 		}
+		public function where($condiciones=[]){
+			$sql='SELECT * FROM '.$this->table;
+			$i=0;
+			//$condiciones=['password'=>'Hola123.','correo'=>'jessy@j.com'];
+			if(count($condiciones)>0){
+				$sql.=' WHERE ';
+				foreach ($condiciones as $llave => $valor) {
+					$sql.=$llave.'="'.$valor.'"';
+					if($i<count($condiciones)-1)
+						$sql.=' AND ';
+					$i++;
+				}
+				$resultado=$this->con->query($sql);
+				$result=[];
+				$i=0;
+				while($row=$resultado->fetch_assoc()){
+					$result[$i]=$row;
+					$i++;
+				}
+
+				return $result;
+
+			}
+			else{
+				return [];
+			}
+
+		}
 
 		public function array__find_convertion($attr=array(),$bandera){
 			$sql=''; 	 	 

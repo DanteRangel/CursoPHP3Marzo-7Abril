@@ -4,7 +4,10 @@
 <div class="col-md-8">
 	
 
-		<form action="auth/login.php" method="POST">
+
+
+
+		<form action="./?controller=Login&method=login" method="POST">
 			<div class="panel-login">
 				<div class="panel-body" style="margin-top: 20px;">
 					<div class="row">
